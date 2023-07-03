@@ -1,0 +1,80 @@
+.container{
+  width: 90%;
+  margin: 0 auto; 
+}
+.title{
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(22px + 10 * (100vw / 1920));
+  text-align: center;
+  color: rgb(52, 52, 52);
+}
+.boxFilter{
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+}
+.filterText {
+  width: 20%;
+    
+}
+
+.filterDay{
+  width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+
+.dayVisible{
+  display: block;
+  width: 100px;
+}
+.boxDay{
+  margin-right: 20px;
+  width: 300px;
+}
+
+.filter{
+  width: 100%;
+  -webkit-appearance: none;
+  border-radius: 5px;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin: 0 20px;
+}
+
+ .filter::-webkit-slider-thumb {
+  background: #06a9ee;;
+  border-radius: 50%;
+  cursor: pointer;
+  width:15px;
+  height: 15px;
+  -webkit-appearance: none;
+}
+
+
+
+@media(max-width:768px) {
+  .boxFilter{
+    flex-direction: column;
+    align-items: center;
+  }
+  .filterText {
+    width: 100%;
+  }
+
+  .boxDay{
+    width: 80%;
+    margin-right: 0px;
+  }
+  .filterDay{
+    flex-direction: column;
+  }
+
+}
+@media(max-width:425px) {
+  .filterDay{
+    width: 250px;}
+}
