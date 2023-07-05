@@ -38,28 +38,9 @@ const Output = ({ filteredSuggestions }) => {
     };
   };
   
-  const minColor = [0, 255, 0]; // Зеленый цвет 
-  const maxColor = [255, 0, 0]; // Красный цвет 
+  const minColor = [0, 400, 0]; // Зеленый цвет 
+  const maxColor = [600, 50, 0]; // Красный цвет 
   
-    // задний фон для дней 
-
-    // const calculateDayColor = (day) => {
-    //   const normalizedDay = (day - minDay) / (maxDay - minDay);
-    
-    //   if (normalizedDay >= 0.8) {
-    //     return 'red';
-    //   } else if (normalizedDay >= 0.4) {
-    //     return 'yellow';
-    //   } else {
-    //     return 'green';
-    //   }
-    // };
-    
-  
-
-    // const minDay = Math.min(...filteredSuggestions.map(item => item.day));
-    // const maxDay = Math.max(...filteredSuggestions.map(item => item.day));
-    
 
     return (
       <div className={s.container}>
@@ -79,12 +60,12 @@ const Output = ({ filteredSuggestions }) => {
               </div>
               <span
                 className={s.day}
-                // style={{ background: calculateDayColor(item.day, maxDay) }}
                 style={{background:item.dayColor}}
               >
                 {item.day}
               </span>
               <span className={s.brand} style={{color:item.supplierColor}}>{item.supplier}</span>
+              <span    className={s.remainder} style={{background:item.remainderColor}}>{item.remainder}</span>
             </div>
           ))}
           {/* Если есть дополнительные элементы, добавляем их в последнюю колонку */}
