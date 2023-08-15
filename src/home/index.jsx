@@ -2,11 +2,18 @@ import React, { useState, useEffect } from 'react';
 import s from './home.module.css';
 import { suggestions } from '../components/backendServer';
 import Output from './output';
-import { Autocomplete, TextField, List,Slider,Box } from '@mui/material';
+import { Autocomplete, TextField, List, Slider, Box } from '@mui/material';
 import { styled } from '@mui/system';
+import { useDispatch } from 'react-redux';
+import { getAllProduct } from '../redux/productSlice';
 
 
 const Home = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    // dispatch(getAllProduct())
+  }, [])
 
   const [article, setArticle] = useState('');
   const [brand, setBrand] = useState('');
@@ -44,7 +51,7 @@ const Home = () => {
 
 
 
-// день дня дней ...
+  // день дня дней ...
   const getDayLabel = (days) => {
     const lastDigit = days % 10;
     const lastTwoDigits = days % 100;
@@ -70,7 +77,7 @@ const Home = () => {
       <h1 className={s.title}>Dash Board</h1>
       <div className={s.boxFilter}>
         <Autocomplete
-         ListboxComponent={CustomListbox}
+          ListboxComponent={CustomListbox}
           className={s.filterText}
           freeSolo
           id="free-solo-2-demo"
@@ -96,7 +103,7 @@ const Home = () => {
         />
         <Autocomplete
           className={s.filterText}
-         ListboxComponent={CustomListbox}
+          ListboxComponent={CustomListbox}
 
           freeSolo
           id="free-solo-2-demo"
@@ -138,13 +145,13 @@ const Home = () => {
                 },
                 '& .MuiSlider-track': {
                   backgroundColor: '#DB0001',
-                  border:'none',
+                  border: 'none',
                 },
-             
+
               }}
             />
           </Box>
-          <span className={s.dayVisible}>{filterValue[1] <= 1 ?'поставка сегодня':`${filterValue[1]} дней`}</span>
+          <span className={s.dayVisible}>{filterValue[1] <= 1 ? 'поставка сегодня' : `${filterValue[1]} дней`}</span>
         </div>
       </div>
       <div>
@@ -159,7 +166,7 @@ export default Home;
 
 
 
-  /*стили для скролла */
+/*стили для скролла */
 const CustomListbox = styled(List)`
   ::-webkit-scrollbar {
     width: 5px;

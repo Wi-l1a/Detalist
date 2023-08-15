@@ -46,6 +46,13 @@ const Output = ({ filteredSuggestions }) => {
       <div className={s.container}>
         {columns.map((column, columnIndex) => (
           <div key={columnIndex} className={s.column}>
+            <div className={s.nameTitle}>
+            <p>Цена</p>
+            <p>Срок поставки</p>
+            <p>Поставщик</p>
+            <p>Количество</p>
+            </div>
+           
             {column.map((item, index) => (
               <div key={index} className={s.item}>
                 <div className={s.boxPrice}>
@@ -64,7 +71,8 @@ const Output = ({ filteredSuggestions }) => {
               >
                 {item.day}
               </span>
-              <span className={s.brand} style={{color:item.supplierColor}}>{item.supplier}</span>
+              
+              <span className={s.brand} >{item.supplier}</span>  {/* style={{color:item.supplierColor}} */}
               <span    className={s.remainder} style={{background:item.remainderColor}}>{item.remainder}</span>
             </div>
           ))}
